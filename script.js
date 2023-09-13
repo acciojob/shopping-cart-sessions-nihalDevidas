@@ -11,7 +11,7 @@ const products = [
 
 
 let cartData;
-let data = JSON.parse(sessionStorage.getItem("appData"));
+let data = JSON.parse(sessionStorage.getItem("cart"));
 if(data){
 	cartData = data;
 }
@@ -62,7 +62,7 @@ document.getElementById("clear-cart-btn").addEventListener('click',clearCart);
 function renderCart() {
        document.getElementById("cart-list").innerHTML = "";
 
-       sessionStorage.setItem("appData",JSON.stringify(cartData));
+       sessionStorage.setItem("cart",JSON.stringify(cartData));
 	
        if(cartData.length < 1){return };
 	  
